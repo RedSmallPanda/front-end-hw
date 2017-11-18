@@ -29,7 +29,7 @@
             name: "iWatch",
             quantity: "Only 299",
             description: "If you like sports, you will definitely fall in love with it!",
-            num:"3"
+            num:"5"
         });
 
         // Simulates call to server
