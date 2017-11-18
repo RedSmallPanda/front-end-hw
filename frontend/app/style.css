@@ -1,13 +1,14 @@
 body {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 #list1, #list2 {
-  float: left;
+    float: left;
 }
 #list2 {
-  margin-left: 40px;
+    margin-left: 40px;
 }
 
 .error {
-  color: red;
+    color: red;
+    font-weight: bold;
 }
