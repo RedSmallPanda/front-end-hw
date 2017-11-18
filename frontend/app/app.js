@@ -1,45 +1,45 @@
 (function () {
     'use strict';
 
-        angular.module('MsgApp', [])
-    .controller('MsgController', MsgController)
-    .filter('loves', LovesFilter)
-    .filter('truth', TruthFilter);
+    var shoppingList1 = [
+        "Milk", "Donuts", "Cookies", "Chocolate", "Peanut Butter", "Pepto Bismol", "Pepto Bismol (Chocolate flavor)", "Pepto Bismol (Cookie flavor)"
+    ];
 
-        MsgController.$inject = ['$scope', 'lovesFilter'];
-    function MsgController($scope, lovesFilter) {
-          $scope.stateOfBeing = "hungry";
-
-              $scope.sayMessage = function () {
-                var msg = "Yaakov likes to eat healthy snacks at night!";
-               return msg;
-              };
-
-              $scope.sayLovesMessage = function () {
-                var msg = "Yaakov likes to eat healthy snacks at night!";
-               msg = lovesFilter(msg)
-                    return msg;
-              };
-
-              $scope.feedYaakov = function () {
-                $scope.stateOfBeing = "fed";
-              };
+    var shoppingList2 = [
+        {
+            name: "Milk",
+            quantity: "2"
+        },
+        {
+            name: "Donuts",
+            quantity: "200"
+        },
+        {
+            name: "Cookies",
+            quantity: "300"
+        },
+        {
+            name: "Chocolate",
+            quantity: "5"
         }
+    ];
 
-    function LovesFilter() {
-          return function (input) {
-                input = input || "";
-                input = input.replace("likes", "loves");
-                return input;
-              };
-        }
+    angular.module('ShoppingListApp', [])
+        .controller('ShoppingListController', ShoppingListController);
 
-    function TruthFilter() {
-          return function (input, target, replace) {
-                    input = input || "";
-                    input = input.replace(target, replace);
-                    return input;
-                  }
-            }
+    ShoppingListController.$inject = ['$scope'];
+    function ShoppingListController($scope) {
+        $scope.shoppingList1 = shoppingList1;
+        $scope.shoppingList2 = shoppingList2;
 
-    })();
+        $scope.addToList = function () {
+            var newItem = {
+                name: $scope.newItemName,
+                quantity: $scope.newItemQuantity
+            };
+
+            $scope.shoppingList2.push(newItem);
+        };
+    }
+
+})();
