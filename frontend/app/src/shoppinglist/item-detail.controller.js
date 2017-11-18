@@ -12,6 +12,7 @@
         itemDetail.name = item.name;
         itemDetail.quantity = item.quantity;
         itemDetail.description = item.description;
+        itemDetail.num=item.num;
     }
 
 })();
