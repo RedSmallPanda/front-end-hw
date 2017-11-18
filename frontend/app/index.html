@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html ng-app='ShoppingListDirectiveApp'>
+<html ng-app='ShoppingList'>
 <head>
     <meta charset="utf-8">
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <title>Directives with Isolate Scope and '&'</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shopping List With Events</title>
 </head>
 <body>
-<h1>Directives with Isolate Scope and '&'</h1>
-
-<!-- LIST #1 - unlimited items -->
+<h1>Shopping List With Events:</h1>
 <div id="list" ng-controller='ShoppingListController as list'>
     <input type="text" ng-model="list.itemName" placeholder="item name">
     <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
@@ -20,11 +16,29 @@
     <shopping-list
             items="list.items"
             title="{{list.title}}"
-            bad-remove="list.removeItem"
             on-remove="list.removeItem(index)"></shopping-list>
 
 </div>
 
-</div>
+<loading-spinner></loading-spinner>
+
+<!-- Libraries -->
+<script src="lib/jquery-3.1.0.min.js"></script>
+<script src="lib/angular.min.js"></script>
+
+<!-- Modules -->
+
+<script src="src/shoppinglist/shoppinglist.module.js"></script>
+<script src="src/spinner/spinner.module.js"></script>
+
+<!-- 'ShoppingList' module artifacts -->
+<script src="src/shoppinglist/shoppinglist.component.js"></script>
+<script src="src/shoppinglist/shoppinglist.controller.js"></script>
+<script src="src/shoppinglist/shoppinglist.factory.js"></script>
+<script src="src/shoppinglist/weightlossfilter.service.js"></script>
+
+<!-- 'Spinner' module artifacts -->
+<script src="src/spinner/loadingspinner.component.js"></script>
+
 </body>
 </html>
