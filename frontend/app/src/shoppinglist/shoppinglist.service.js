@@ -12,7 +12,6 @@
         // List of shopping items
         var items = [];
 
-        // Pre-populate a no cookie list
         items.push({
             name: "iPhoneX",
             quantity: "Only $1099",
