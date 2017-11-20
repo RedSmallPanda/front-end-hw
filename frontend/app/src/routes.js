@@ -12,13 +12,12 @@
 
         $stateProvider
 
-        // Home page
+
             .state('home', {
                 url: '/',
                 templateUrl: 'src/shoppinglist/templates/home.template.html'
             })
 
-            // Premade list page
             .state('mainList', {
                 url: '/main-list',
                 templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
@@ -32,7 +31,6 @@
 
             // Item detail
             .state('mainList.itemDetail', {
-                // url: '/item-detail/{itemId}',
                 templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
                 controller: 'ItemDetailController as itemDetail',
                 params: {

@@ -31,14 +31,10 @@
             num:"5"
         });
 
-        // Simulates call to server
-        // Returns a promise, NOT items array directly
         service.getItems = function () {
             var deferred = $q.defer();
 
-            // Wait 2 seconds before returning
             $timeout(function () {
-                // deferred.reject(items);
                 deferred.resolve(items);
             }, 800);
 
